@@ -1,2 +1,2 @@
 # Angular
-Projeto feito com angular e TypeScript
+Projetos criado com angular e TypeScript - Curso Loiane
