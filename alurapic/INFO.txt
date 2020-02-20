@@ -1,0 +1,11 @@
+
+#Instalando Angular CLI
+npm install -g @angular/cli@6.0.7
+npm --version
+ng --version
+
+#Criando um projeto
+ng new alurapic
+
+#Executando o projeto
+ng serve --open
