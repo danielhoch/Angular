@@ -9,3 +9,6 @@ ng new alurapic
 
 #Executando o projeto
 ng serve --open
+
+#Instalando bootstrap
+npm install bootstrap@4.1.1
