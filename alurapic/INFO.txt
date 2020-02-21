@@ -12,3 +12,6 @@ ng serve --open
 
 #Instalando bootstrap
 npm install bootstrap@4.1.1
+
+#Instalação sqlite3
+npm install sqlite3@4.0.2 --save-exact --unsafe-perm
