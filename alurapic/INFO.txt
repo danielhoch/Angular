@@ -15,3 +15,7 @@ npm install bootstrap@4.1.1
 
 #Instalação sqlite3
 npm install sqlite3@4.0.2 --save-exact --unsafe-perm
+
+#Instalando plugins de fontes
+npm install font-awesome@4.1.0 -s
+Adicionar o style no arquivo angular.json
