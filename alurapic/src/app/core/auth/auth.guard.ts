@@ -5,27 +5,20 @@ import { Observable } from 'rxjs';
 import { UserService } from '../user/user.service';
 
 @Injectable({ providedIn: 'root'})
-
 export class AuthGuard implements CanActivate {
 
-  constructor(private userService: UserService,
-              private router: Router) {}
+    constructor(
+        private userService: UserService,
+        private router: Router) {}
 
-  canActivate(route: ActivatedRouteSnapshot,
-              state: RouterStateSnapshot):
-              boolean | Observable<boolean> | Promise<boolean> {
-    console.log('Ativou guarda de rota');
+    canActivate(
+        route: ActivatedRouteSnapshot,
+        state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
 
-    if (this.userService.isLogged()) {
-      const name = this.userService.getUserName();
-
-      if (name) {
-        this.router.navigate(['user', name]);
-        return false;
-      } else {
-        return true;
-      }
+            if(!this.userService.isLogged()){
+                this.router.navigate(['']);
+                return false;
+            }
+            return true;
     }
-    return true;
-  }
 }
