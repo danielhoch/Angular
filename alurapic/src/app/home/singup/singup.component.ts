@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { lowerCaseValidator } from '../../shared/validators/lower-case.validator';
 import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
 import { NewUser } from './new-user';
 import { SingUpService } from './singup.service';
-import { Router } from '@angular/router';
+import { userNamePassword } from './username-password.validator';
 import { PlatformDetectorService } from '../../core/plataform-detector/platform-detector.service';
 
 @Component({
@@ -54,6 +56,8 @@ export class SingUpComponent implements OnInit {
                     Validators.maxLength(14)
                 ]
             ]
+        }, {
+            validator: userNamePassword
         });
 
         this.platformDetectorService.isPlatformBrowser() &&
@@ -61,6 +65,7 @@ export class SingUpComponent implements OnInit {
     }
 
     signup() {
+      if (this.signupForm.valid && !this.signupForm.pending) {
         const newUser = this.signupForm.getRawValue() as NewUser;
         this.signUpService
             .signup(newUser)
@@ -68,5 +73,6 @@ export class SingUpComponent implements OnInit {
                 () => this.router.navigate(['']),
                 err => console.log(err)
             );
+      }
     }
 }

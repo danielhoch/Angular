@@ -9,6 +9,7 @@ import { LoadingModule } from './../shared/components/loading/loading.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuModule } from './../shared/components/menu/menu.module';
+import { ShowIfLoggedModule } from './../shared/directives/show-if-logged/show-if-logged.module';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { MenuModule } from './../shared/components/menu/menu.module';
         RouterModule,
         AlertModule,
         LoadingModule,
-        MenuModule
+        MenuModule,
+        ShowIfLoggedModule
     ],
     providers: [
         {
